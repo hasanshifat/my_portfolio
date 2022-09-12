@@ -11,15 +11,23 @@ PreferredSize topNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
     PreferredSize(
       preferredSize: !ResponsiveWidget.isSmallScreen(context)
           ? const Size.fromHeight(85.0)
-          : const Size.fromHeight(55.0),
+          : const Size.fromHeight(50.0),
       child: AppBar(
         automaticallyImplyLeading: false,
-        centerTitle: true,
         leading: !ResponsiveWidget.isSmallScreen(context)
             ? Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [Image.asset('assets/images/sun.png')],
+                padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  decoration: const BoxDecoration(shape: BoxShape.circle),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image.asset(
+                      'assets/images/yl-bg.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               )
             : IconButton(
