@@ -12,56 +12,61 @@ void main() {
 }
 
 ThemeData darkTheme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Colors.amber,
-    useMaterial3: true,
-    appBarTheme: AppBarTheme(
-      backgroundColor: Colors.transparent.withOpacity(0.1),
-    ),
-    textTheme: TextTheme(
-      titleLarge: GoogleFonts.roboto(
-          color: CustomColors.colorWhite,
-          fontSize: 50,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.normal),
-      labelLarge: TextStyle(
-          fontSize: 12.0,
-          fontStyle: FontStyle.normal,
-          color: CustomColors.colorBlack),
-      bodyLarge: TextStyle(
-          fontSize: 14.0, fontStyle: FontStyle.normal, color: Colors.white),
-      bodyMedium: TextStyle(
-          fontSize: 12.0, fontStyle: FontStyle.normal, color: Colors.black87),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.yellow))),
-    buttonTheme: const ButtonThemeData(
-      buttonColor: Colors.amber,
-      disabledColor: Colors.grey,
-    ));
+  brightness: Brightness.dark,
+  primaryColor: Colors.amber,
+  useMaterial3: true,
+  appBarTheme: AppBarTheme(
+    backgroundColor: Colors.transparent.withOpacity(0.1),
+  ),
+  textTheme: TextTheme(
+    titleLarge: GoogleFonts.roboto(
+        color: CustomColors.colorWhite,
+        fontSize: 50,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.normal),
+    labelLarge: const TextStyle(
+        fontSize: 12.0,
+        fontStyle: FontStyle.normal,
+        color: CustomColors.colorBlack),
+    bodyLarge: const TextStyle(
+        fontSize: 14.0, fontStyle: FontStyle.normal, color: Colors.white),
+    bodyMedium: const TextStyle(
+        fontSize: 12.0, fontStyle: FontStyle.normal, color: Colors.white),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+          elevation: MaterialStateProperty.all(5),
+          backgroundColor: MaterialStateProperty.all(CustomColors.colorGreen))),
+);
 
 ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.blue,
     useMaterial3: true,
-    appBarTheme: AppBarTheme(backgroundColor: Colors.transparent),
+    appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
     textTheme: TextTheme(
       titleLarge: GoogleFonts.roboto(
           color: CustomColors.colorBlack,
           fontSize: 50,
           fontWeight: FontWeight.bold,
           fontStyle: FontStyle.normal),
-      labelLarge: TextStyle(
-          fontSize: 12.0, fontStyle: FontStyle.normal, color: Colors.black87),
-      bodyLarge: TextStyle(
-          fontSize: 14.0, fontStyle: FontStyle.normal, color: Colors.black87),
-      bodyMedium: TextStyle(
+      labelLarge: const TextStyle(
           fontSize: 12.0, fontStyle: FontStyle.normal, color: Colors.white),
+      bodyLarge: const TextStyle(
+          fontSize: 14.0,
+          fontStyle: FontStyle.normal,
+          color: Colors.white,
+          letterSpacing: 0.5),
+      bodyMedium: const TextStyle(
+          fontSize: 12.0,
+          fontStyle: FontStyle.normal,
+          color: CustomColors.colorWhite),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.blue))),
+            elevation: MaterialStateProperty.all(5),
+            backgroundColor:
+                MaterialStateProperty.all(CustomColors.colorGreyDark))),
     buttonTheme: const ButtonThemeData(
       buttonColor: Colors.blue,
       disabledColor: Colors.grey,
@@ -81,7 +86,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    getThemeStatus();
+    // getThemeStatus();
     super.initState();
   }
 

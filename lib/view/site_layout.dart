@@ -11,7 +11,9 @@ class SiteLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: sckey,
-      appBar: topNavBar(context, sckey),
+      appBar: !ResponsiveWidget.isSmallScreen(context)
+          ? null
+          : topNavBar(context, sckey),
       drawer: Drawer(
           //  child: SideMenu(),
           ),
